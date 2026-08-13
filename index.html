@@ -1,3 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Photo Gallery">
+<title>Photo Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-layout="slideshow" data-theme="dark" data-transition="fade">
+<div class="gallery-shell" id="galleryShell">
+<header class="gallery-header">
+<div><div class="eyebrow">PHOTO GALLERY</div><h1 id="appTitle">Photo Gallery</h1></div>
+<div class="header-actions">
+<button class="icon-button" id="settingsToggle" type="button" aria-label="Open settings" aria-expanded="false">⚙</button>
+<button class="icon-button" id="fullscreenBtn" type="button" aria-label="Enter full screen" aria-pressed="false">⛶</button>
+</div>
+</header>
+<main class="gallery-main">
+<section class="stage-wrap">
+<div class="media-stage" id="mediaStage"></div>
+<div class="hero-stage" id="heroStage"></div>
+<div class="grid-gallery" id="gridGallery"></div>
+<div class="masonry-gallery" id="masonryGallery"></div>
+<div class="empty-state" id="emptyState" hidden><div class="empty-icon">◫</div><h2>No photographs yet</h2><p>Add images to <code>photos/</code> and run <code>update-gallery.ps1</code>.</p></div>
+<div class="gallery-overlay">
+<div class="caption-panel" id="captionPanel"><div class="caption-title" id="captionTitle"></div><div class="caption-text" id="captionText"></div></div>
+<div class="counter"><span id="currentSlide">0</span><span class="counter-separator">/</span><span id="totalSlides">0</span></div>
+</div>
+</section>
+<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<nav class="controls" aria-label="Gallery controls">
+<button class="control-button" id="prevBtn" type="button" aria-label="Previous photo">‹</button>
+<button class="control-button primary" id="playPauseBtn" type="button">Pause</button>
+<button class="control-button" id="nextBtn" type="button" aria-label="Next photo">›</button>
+<div class="mode-group"><button class="mode-button is-active" id="sequentialBtn" type="button" aria-pressed="true">Sequential</button><button class="mode-button" id="shuffleBtn" type="button" aria-pressed="false">Shuffle</button></div>
+</nav>
+<div class="thumbs-strip" id="thumbsStrip" aria-label="Photo thumbnails"></div>
+</main>
+<footer class="gallery-footer">Use ← → to navigate · Space to play/pause · F for full screen</footer>
+</div>
+<aside class="settings-panel" id="settingsPanel" aria-hidden="true">
+<div class="settings-card">
+<div class="settings-header"><h2>Gallery settings</h2><button class="icon-button" id="closeSettingsBtn" type="button">×</button></div>
+<label>Layout<select id="layoutSelect"><option value="slideshow">Full-screen slideshow</option><option value="hero">Hero + thumbnails</option><option value="grid">Photo grid</option><option value="masonry">Masonry gallery</option></select></label>
+<label>Auto-change interval<select id="intervalSelect"><option value="3000">3 seconds</option><option value="5000">5 seconds</option><option value="8000">8 seconds</option><option value="10000">10 seconds</option><option value="15000">15 seconds</option></select></label>
+<label>Transition<select id="transitionSelect"><option value="fade">Fade</option><option value="slide">Slide</option><option value="zoom">Zoom</option></select></label>
+<label>Theme<select id="themeSelect"><option value="dark">Dark</option><option value="light">Light</option></select></label>
+<label class="switch-row"><span>Show captions</span><input id="captionsToggle" type="checkbox"></label>
+<label class="switch-row"><span>Show thumbnails</span><input id="thumbsToggle" type="checkbox"></label>
+<p class="settings-note">Display preferences are saved in this browser.</p>
+</div>
+</aside>
 <script src="config.js"></script>
 <script src="photos.js"></script>
 <script src="app.js"></script>
+</body>
+</html>
