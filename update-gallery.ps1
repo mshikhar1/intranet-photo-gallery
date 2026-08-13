@@ -127,7 +127,7 @@ $lines += "// Generated: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 $lines += "// To add/remove photos: update the source folder and re-run"
 $lines += "//   .\update-gallery.ps1"
 $lines += "// ============================================================"
-$lines += "const PHOTOS = ["
+$lines += "window.PHOTOS = ["
 
 $sortedFiles = $ImageFiles | Sort-Object Name
 $fileCount = $sortedFiles.Count
