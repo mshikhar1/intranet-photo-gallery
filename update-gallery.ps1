@@ -136,7 +136,7 @@ foreach ($file in $sortedFiles) {
     $i++
     $caption = Get-Caption $file.Name
     $comma = if ($i -lt $fileCount) { "," } else { "" }
-    $lines += "  { src: \"photos/$($file.Name)\", caption: \"$caption\" }$comma"
+    $lines += ('  { src: "' + 'photos/' + $file.Name + '", caption: "' + $caption + '" }' + $comma)
 }
 
 $lines += "];"
