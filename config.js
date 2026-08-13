@@ -18,8 +18,8 @@ window.GALLERY_CONFIG = {
   defaultTransition: "fade",
 
   // Default visibility of captions and thumbnails.
-defaultShowCaptions: true,
-defaultShowThumbnails: true,
+  defaultShowCaptions: true,
+  defaultShowThumbnails: true,
 
   // Optional footer text.
   footerText: ""
